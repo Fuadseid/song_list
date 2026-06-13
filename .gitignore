@@ -1,0 +1,31 @@
+﻿# Dependencies
+**/node_modules/
+**/node_modules/**/*
+node_modules/
+
+# Lock files
+package-lock.json
+yarn.lock
+
+# Environment files
+.env
+.env.*
+!.env.example
+
+# Build outputs
+**/dist/
+**/build/
+**/.next/
+
+# Docker
+*.log
+.dockerignore
+
+# IDE
+.vscode/
+.idea/
+*.swp
+
+# OS
+.DS_Store
+Thumbs.db
