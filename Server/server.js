@@ -1,3 +1,6 @@
+require('./crypto-polyfill');
+
+
 const dotenv = require('dotenv');
 const connectDB = require('./src/config/db');
 

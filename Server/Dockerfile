@@ -1,12 +1,18 @@
-FROM node:18-alpine
+FROM node:18-bullseye
 
 WORKDIR /app
 
+# Copy package files
 COPY package*.json ./
-RUN npm ci --only=production
 
+# Install dependencies (not just production for dev)
+RUN npm install
+
+# Copy source code
 COPY . .
 
+# Expose port
 EXPOSE 5000
 
-CMD ["node", "server.js"]
+# Start server
+CMD ["npm", "run", "dev"]

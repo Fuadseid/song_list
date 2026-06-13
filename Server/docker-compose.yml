@@ -1,5 +1,3 @@
-version: '3.8'
-
 services:
   mongodb:
     image: mongo:latest
@@ -19,6 +17,9 @@ services:
       - PORT=5000
     depends_on:
       - mongodb
+    volumes:
+      - .:/app
+      - /app/node_modules
 
 volumes:
   mongodb_data:
