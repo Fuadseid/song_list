@@ -13,7 +13,7 @@ export const FormGroup = styled.div`
 
 export const Label = styled.label`
   font-weight: 600;
-  color: #333;
+  color: #000000;
   font-size: 14px;
   display: flex;
   align-items: center;
@@ -21,44 +21,43 @@ export const Label = styled.label`
 `;
 
 export const IconSpan = styled.span`
-  font-size: 18px;
+  font-size: 16px;
 `;
 
 export const Input = styled.input`
   padding: 12px 16px;
-  border: 2px solid #e0e0e0;
-  border-radius: 8px;
-  font-size: 15px;
-  transition: all 0.3s ease;
+  border: 1px solid #cccccc;
+  border-radius: 4px;
+  font-size: 14px;
+  transition: all 0.2s ease;
   
   &:focus {
     outline: none;
-    border-color: #667eea;
-    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+    border-color: #000000;
+    box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.05);
   }
   
   &:hover {
-    border-color: #667eea;
+    border-color: #666666;
   }
 `;
 
-export const Select = styled.select<{ borderColor?: string }>`
+export const Select = styled.select`
   padding: 12px 16px;
-  border: 2px solid ${props => props.borderColor || '#e0e0e0'};
-  border-radius: 8px;
-  font-size: 15px;
+  border: 1px solid #cccccc;
+  border-radius: 4px;
+  font-size: 14px;
   background: white;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: all 0.2s ease;
   
   &:focus {
     outline: none;
-    border-color: #667eea;
-    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+    border-color: #000000;
   }
   
   &:hover {
-    border-color: #667eea;
+    border-color: #666666;
   }
 `;
 
@@ -71,18 +70,18 @@ export const ButtonGroup = styled.div`
 export const SubmitButton = styled.button`
   flex: 1;
   padding: 12px 24px;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  color: white;
+  background: #000000;
+  color: #ffffff;
   border: none;
-  border-radius: 8px;
+  border-radius: 4px;
   cursor: pointer;
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 600;
-  transition: all 0.3s ease;
+  transition: all 0.2s ease;
   
   &:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+    background: #333333;
+    transform: translateY(-1px);
   }
   
   &:active {
@@ -90,7 +89,7 @@ export const SubmitButton = styled.button`
   }
   
   &:disabled {
-    opacity: 0.6;
+    opacity: 0.5;
     cursor: not-allowed;
     transform: none;
   }
@@ -99,17 +98,18 @@ export const SubmitButton = styled.button`
 export const CancelButton = styled.button`
   flex: 1;
   padding: 12px 24px;
-  background: #f5f5f5;
-  color: #666;
-  border: 2px solid #e0e0e0;
-  border-radius: 8px;
+  background: #ffffff;
+  color: #000000;
+  border: 1px solid #cccccc;
+  border-radius: 4px;
   cursor: pointer;
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 600;
-  transition: all 0.3s ease;
+  transition: all 0.2s ease;
   
   &:hover {
-    background: #e0e0e0;
-    border-color: #ccc;
+    background: #f5f5f5;
+    border-color: #000000;
   }
 `;
+

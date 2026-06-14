@@ -16,16 +16,16 @@ import {
 } from './SongForm.styles';
 
 const genres = [
-  { value: 'Rock', icon: '🎸', color: '#e74c3c' },
-  { value: 'Pop', icon: '🎤', color: '#3498db' },
-  { value: 'Jazz', icon: '🎷', color: '#f39c12' },
-  { value: 'Hip Hop', icon: '🎧', color: '#2ecc71' },
-  { value: 'Classical', icon: '🎻', color: '#9b59b6' },
-  { value: 'Electronic', icon: '🎹', color: '#1abc9c' },
-  { value: 'R&B', icon: '🎵', color: '#e67e22' },
-  { value: 'Country', icon: '🤠', color: '#f1c40f' },
-  { value: 'Metal', icon: '🤘', color: '#2c3e50' },
-  { value: 'Folk', icon: '🪕', color: '#d35400' },
+  { value: 'Rock', icon: '🎸' },
+  { value: 'Pop', icon: '🎤' },
+  { value: 'Jazz', icon: '🎷' },
+  { value: 'Hip Hop', icon: '🎧' },
+  { value: 'Classical', icon: '🎻' },
+  { value: 'Electronic', icon: '🎹' },
+  { value: 'R&B', icon: '🎵' },
+  { value: 'Country', icon: '🤠' },
+  { value: 'Metal', icon: '🤘' },
+  { value: 'Folk', icon: '🪕' },
 ];
 
 interface SongFormProps {
@@ -76,15 +76,15 @@ const SongForm: React.FC<SongFormProps> = ({ editingSong, onClose, onSuccess }) 
     try {
       if (editingSong) {
         await dispatch(updateSongRequest({ id: editingSong._id, song: formData }));
-        toast.success('✨ Song updated successfully!');
+        toast.success('Song updated successfully!');
       } else {
         await dispatch(createSongRequest(formData));
-        toast.success('🎵 Song added successfully!');
+        toast.success('Song added successfully!');
       }
       onSuccess();
       onClose();
     } catch (error) {
-      toast.error('❌ Something went wrong. Please try again.');
+      toast.error('Something went wrong. Please try again.');
     } finally {
       setLoading(false);
     }
@@ -96,8 +96,6 @@ const SongForm: React.FC<SongFormProps> = ({ editingSong, onClose, onSuccess }) 
       [e.target.name]: e.target.value,
     });
   };
-
-  const selectedGenre = genres.find(g => g.value === formData.genre);
 
   return (
     <Form onSubmit={handleSubmit}>
@@ -137,12 +135,7 @@ const SongForm: React.FC<SongFormProps> = ({ editingSong, onClose, onSuccess }) 
 
       <FormGroup>
         <Label><IconSpan>🎸</IconSpan> Genre</Label>
-        <Select 
-          name="genre" 
-          value={formData.genre} 
-          onChange={handleChange}
-          borderColor={selectedGenre?.color}
-        >
+        <Select name="genre" value={formData.genre} onChange={handleChange}>
           {genres.map((genre) => (
             <option key={genre.value} value={genre.value}>
               {genre.icon} {genre.value}
@@ -153,7 +146,7 @@ const SongForm: React.FC<SongFormProps> = ({ editingSong, onClose, onSuccess }) 
 
       <ButtonGroup>
         <SubmitButton type="submit" disabled={loading}>
-          {loading ? '⏳ Saving...' : (editingSong ? '✏️ Update Song' : '➕ Add Song')}
+          {loading ? 'Saving...' : (editingSong ? 'Update Song' : 'Add Song')}
         </SubmitButton>
         <CancelButton type="button" onClick={onClose}>
           Cancel
