@@ -17,7 +17,7 @@ const GenreFilter: React.FC<GenreFilterProps> = ({ onFilterChange }) => {
   const { songs } = useTypedSelector((state) => state.songs);
   const [selectedGenre, setSelectedGenre] = useState<string>('');
 
-  const genres = [...new Set(songs.map((song) => song.genre))].sort();
+  const genres = Array.from(new Set(songs.map((song) => song.genre))).sort();
 
   useEffect(() => {
     if (selectedGenre) {

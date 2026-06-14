@@ -13,10 +13,11 @@ export const SongCard = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  transition: all 0.3s ease;
   
   &:hover {
     transform: translateX(5px);
-    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
   }
 `;
 
@@ -46,9 +47,11 @@ export const Button = styled.button`
   border-radius: 4px;
   cursor: pointer;
   font-size: 14px;
+  transition: all 0.2s;
   
   &:hover {
     opacity: 0.8;
+    transform: scale(1.05);
   }
 `;
 
@@ -60,6 +63,11 @@ export const EditButton = styled(Button)`
 export const DeleteButton = styled(Button)`
   background-color: #f44336;
   color: white;
+  
+  &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
 `;
 
 export const LoadingText = styled.p`
@@ -68,3 +76,4 @@ export const LoadingText = styled.p`
   color: #666;
   padding: 40px;
 `;
+
