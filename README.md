@@ -79,4 +79,4 @@ A full-stack web application for managing songs, artists, albums, and genres wit
 | **Songs Endpoint** | [https://song-list-lnq0.onrender.com/api/songs](https://song-list-lnq0.onrender.com/api/songs) |
 | **Stats Endpoint** | [https://song-list-lnq0.onrender.com/api/songs/stats](https://song-list-lnq0.onrender.com/api/songs/stats) |
 
-## 📁 Project Structure
+
